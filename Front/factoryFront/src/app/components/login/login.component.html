@@ -1,0 +1,29 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first" >
+        <img src="https://www.tecnofactory.com.co/dise%C3%B1o/tecnofactory5x5.png" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <input type="text" id="login" class="fadeIn second" formControlName="login" placeholder="login">
+        <input type="text" id="password" class="fadeIn third" formControlName="password" placeholder="password">
+        <br>
+        <button type="submit" class="btn btn-primary  btn-lg btn-block" [disabled]="!profileForm.valid">Iniciar</button>
+      </form>
+  
+
+      <br>
+      <div class="row">
+        <div class="col-6">
+          <button (click)="restaurante()" name="" id="" class="btn btn-primary btn-lg btn-block">Restaurante</button>
+        </div>
+        <div class="col-6">
+          <button (click)="cliente()" name="" id="" class="btn btn-primary btn-lg btn-block">Cliente</button>
+        </div>
+      </div>
+    </div>
+  </div>

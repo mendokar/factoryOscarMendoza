@@ -1,0 +1,50 @@
+
+/* INSERTAR LOS DATOS DE RESTAURANTES */
+INSERT INTO restaurantes(rest_name,rest_phone)
+VALUES('RESTAURANTE 1','+57 2000106');
+
+INSERT INTO person(rest_name,rest_phone)
+VALUES('RESTAURANTE 2','+57 2000107');
+
+INSERT INTO person(rest_name,rest_phone)
+VALUES('RESTAURANTE 3','+57 2000108');
+
+
+
+/* INSERTAR LAS CATEGORIAS DEL RESTAURANTE */
+INSERT INTO categorias(cat_name)
+VALUES('Aperitivos');
+INSERT INTO person(cat_name)
+VALUES('Platos Principales');
+INSERT INTO person(cat_name)
+VALUES('Entradas');
+INSERT INTO person(cat_name)
+VALUES('Guarniciones');
+INSERT INTO person(cat_name)
+VALUES('Bebidas');
+
+/* INSERTAR LOS PRODUCTOS CON SUS CATEGORIAS */
+INSERT INTO productos(prod_name, prod_category)
+VALUES('Producto 1 - Aperitivos', 'Aperitivos');
+INSERT INTO productos(prod_name, prod_category)
+VALUES('Producto 2 - Aperitivos', 'Aperitivos');
+
+INSERT INTO productos(prod_name, prod_category)
+VALUES('Producto 3 - Platos Principales', 'Platos Principales');
+INSERT INTO productos(prod_name, prod_category)
+VALUES('Producto 4 - Platos Principales', 'Platos Principales');
+
+INSERT INTO productos(prod_name, prod_category)
+VALUES('Producto 5 - Entradas', 'Entradas');
+INSERT INTO productos(prod_name, prod_category)
+VALUES('Producto 6 - Entradas', 'Entradas');
+
+INSERT INTO productos(prod_name, prod_category)
+VALUES('Producto 7 - Guarniciones', 'Guarniciones');
+INSERT INTO productos(prod_name, prod_category)
+VALUES('Producto 8 - Guarniciones', 'Guarniciones');
+
+INSERT INTO productos(prod_name, prod_category)
+VALUES('Producto 9 - Bebidas', 'Bebidas');
+INSERT INTO productos(prod_name, prod_category)
+VALUES('Producto 10 - Bebidas', 'Bebidas');

@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row">
+        <h3>Proceso de Pedidos</h3>
+    </div>
+
+
+    <div class="row">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Ingresa tu Nombre</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre para tu pedido">             
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Ingresa Tu Numero Contacto</label>
+              <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Numero De Contacto">
+            </div>
+
+    </div>
+<hr>
+    <div class="row">
+        <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Selecciona un Restaurante</label>
+              <select (change)="getCategories($event)" class="form-control" name="restaurantL" [(ngModel)]="restaurantL">
+                <option *ngFor="let restaurant of restaurants" [value]="restaurant.value">
+                  {{restaurant.text}}
+                </option>
+            </select>
+            </div>     
+            <div class="form-group">
+                <label for="exampleInputEmail1">Selecciona una categoria</label>
+                <select (change)="getProducts($event)" class="form-control" name="categorieL" [(ngModel)]="categorieL">
+                  <option *ngFor="let categorie of categories" [value]="categorie.value">
+                    {{categorie.text}}
+                  </option>
+              </select>
+              </div>     
+              <div class="form-group">
+                <label for="exampleInputEmail1">Selecciona un producto</label>
+                <select class="form-control" name="productL" [(ngModel)]="productL">
+                  <option *ngFor="let product of products" [value]="product.value">
+                    {{product.text}}
+                  </option>
+              </select>
+              </div>   
+              
+          </form>
+          <div class="form-group">
+            <label for="cants">Ingresa Cantidad</label>
+            <input [(ngModel)]="cantL" type="number" class="form-control" id="cants" placeholder="Cantidad">
+          </div> 
+          
+    </div>
+    <button (click)="addProducts()" type="button" name="" id="" class="btn btn-primary btn-lg btn-block" style="margin: 10px;">Agregar Producto</button>
+    <div class="row">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Producto</th>            
+            <th scope="col">Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of productsC; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{prod.prod_name}}</td>           
+            <td>{{prod.prod_cant}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" style="float: right;">Registrar Pedido</button>
+</div>

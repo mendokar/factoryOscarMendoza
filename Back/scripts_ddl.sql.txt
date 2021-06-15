@@ -1,0 +1,49 @@
+CREATE DATABASE factory_db;
+
+CREATE TABLE IF NOT EXISTS restaurantes (
+    rest_id serial,
+	rest_name VARCHAR ( 50 ) UNIQUE NOT NULL,
+	rest_phone VARCHAR ( 50 ) NOT NULL,	
+	created_at TIMESTAMP NULL DEFAULT NOW(),  
+    PRIMARY KEY (rest_id)
+);
+
+CREATE TABLE IF NOT EXISTS categorias (
+    cat_id serial,
+	cat_name VARCHAR ( 50 ) UNIQUE NOT NULL,	
+	created_at TIMESTAMP NULL DEFAULT NOW(),  
+    PRIMARY KEY (cat_id)
+);
+
+CREATE TABLE IF NOT EXISTS productos (
+    prod_id serial ,
+	prod_name VARCHAR ( 50 ) UNIQUE NOT NULL,	
+	prod_category VARCHAR( 50 ) NOT NULL,
+	created_at TIMESTAMP NULL DEFAULT NOW(),  
+    PRIMARY KEY (prod_id)
+);
+
+CREATE TABLE IF NOT EXISTS pedidos (
+    ped_id serial ,
+	ped_name VARCHAR ( 50 ) UNIQUE NOT NULL,	
+	ped_category VARCHAR( 50 ) NOT NULL,
+	created_at TIMESTAMP NULL DEFAULT NOW(),  
+    PRIMARY KEY (ped_id)
+);
+
+CREATE TABLE IF NOT EXISTS productos_pedidos (
+    prod_ped_id serial ,
+	prod_ped_name VARCHAR ( 50 ) UNIQUE NOT NULL,	
+	prod_ped_cant VARCHAR( 50 ) NOT NULL,
+	prod_ped_observations VARCHAR( 150 ) NOT NULL,
+	created_at TIMESTAMP NULL DEFAULT NOW(),  
+    PRIMARY KEY (prod_ped_id)
+);
+
+CREATE TABLE IF NOT EXISTS clientes (
+    cli_id serial ,
+	cli_name VARCHAR ( 50 ) UNIQUE NOT NULL,	
+	cli_phone VARCHAR( 50 ) NOT NULL,
+	created_at TIMESTAMP NULL DEFAULT NOW(),  
+    PRIMARY KEY (cli_id)
+);
